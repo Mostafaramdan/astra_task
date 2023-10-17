@@ -8,17 +8,17 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('table_2', function (Blueprint $table) {
+        Schema::create('matching_data', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('table_1_id');
-            $table->text('description');
-            $table->enum('reason', ['A','B','C'])->default('A');
+            $table->text('x');
+            $table->text('y');
+            $table->text('z');
         });
     }
 
 
     public function down(): void
     {
-        Schema::dropIfExists('table_2');
+        Schema::dropIfExists('matching_data');
     }
 };

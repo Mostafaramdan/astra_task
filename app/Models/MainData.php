@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Table1 extends Model
+class MainData extends Model
 {
     use HasFactory;
-    protected $table = 'table_1';
+    protected $table = 'main_data';
     public $fillable = ['description'],$timestamps = false;
 
 }

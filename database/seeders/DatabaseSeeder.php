@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            Table1Seeder::class,
-            Table2Seeder::class,
-            Table3Seeder::class
+            MainDataSeeder::class,
+            MappingDataSeeder::class,
+            MatchingDataSeeder::class,
         ]);
     }
 }

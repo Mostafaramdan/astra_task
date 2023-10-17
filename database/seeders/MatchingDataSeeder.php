@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Table3;
-class Table3Seeder extends Seeder
+use App\Models\MatchingData;
+class MatchingDataSeeder extends Seeder
 {
     public function run(): void
     {
@@ -38,7 +38,7 @@ class Table3Seeder extends Seeder
              'factor',
         ];
         foreach($data as $d)
-        Table3::create([
+        MatchingData::create([
             'x'=> $data[rand(0,count($data)-1)] . $data[rand(0,count($data)-1)],
             'y'=> $data[rand(0,count($data)-1)] . $data[rand(0,count($data)-1)],
             'z'=> $data[rand(0,count($data)-1)] . $data[rand(0,count($data)-1)]

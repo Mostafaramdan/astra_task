@@ -3,14 +3,17 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Table2;
-class Table2Seeder extends Seeder
+use App\Models\MainData;
+class MainDataSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
         $data = [
-            ['description' => 'Albumin urine '],
-            ['description' => 'alkaloids , not otherwise specified'],
+            ['description' => 'Albumin urine or other source, quantitative, each specimen'],
+            ['description' => 'alkaloids, not otherwise specified'],
             ['description' => 'barbiturates'],
             ['description' => 'Benzodiazepines; 1-12'],
             ['description' => 'cocaine'],
@@ -21,13 +24,6 @@ class Table2Seeder extends Seeder
             ['description' => 'Drug(s) or substance(s), definitive, qualitative or quantitative, not otherwise specified; 7 or more'],
             ['description' => 'luteinizing releasing factor (LRH)'],
         ];
-        $counter=1;
-        $reasons = ['A','B','C'];
-        foreach($data as $d)
-        Table2::create([
-            'description' => $d['description'],
-            'table_1_id' => $counter++,
-            'reason'=> $reasons[rand(0,2)]
-        ]);
+        MainData::insert($data);
     }
 }

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Table3 as Model;
-class Table3Controller extends Controller
+use App\Models\MainData as Model;
+class MainDataController extends Controller
 {
     function __construct(public Model $repo)
     {}
     public function index()
     {
-        return view('table_3',['records'=>$this->repo->paginate(100)]);
+        return view('main_data',['records'=>$this->repo->paginate(5)]);
     }
 }

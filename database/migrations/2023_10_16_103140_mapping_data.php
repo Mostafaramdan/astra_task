@@ -8,15 +8,17 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('table_1', function (Blueprint $table) {
+        Schema::create('mapping_data', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('main_data_id');
             $table->text('description');
+            $table->enum('reason', ['A','B','C'])->default('A');
         });
     }
 
 
     public function down(): void
     {
-        Schema::dropIfExists('table_1');
+        Schema::dropIfExists('mapping_data');
     }
 };

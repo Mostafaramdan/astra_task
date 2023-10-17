@@ -10,13 +10,13 @@
 <body>
     <ul class="nav nav-pills nav-justified">
         <li class="nav-item">
-            <a class="nav-link {{ request()->is('table_1') ? 'active' : '' }}" href="/table_1">table_1</a>
+            <a class="nav-link {{ request()->is('main_data') ? 'active' : '' }}" href="/main_data">main_data</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ request()->is('table_2') ? 'active' : '' }}" href="/table_2">table_2</a>
+            <a class="nav-link {{ request()->is('mapping_data') ? 'active' : '' }}" href="/mapping_data">mapping_data</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ request()->is('table_3') ? 'active' : '' }}" href="/table_3">table_3</a>
+            <a class="nav-link {{ request()->is('matching_data') ? 'active' : '' }}" href="/matching_data">matching_data</a>
         </li>
     </ul>
     @yield('content')

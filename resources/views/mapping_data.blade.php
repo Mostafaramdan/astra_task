@@ -1,11 +1,12 @@
 @extends('welcome')
 @section('content')
+<a href="{{ route('mapping_data.create') }}" class="btn btn-success btn-block">import Data</a>
 <table class="table">
   <thead>
     <tr>
       <th scope="col">id</th>
       <th scope="col">description</th>
-      <th scope="col">table_1_id</th>
+      <th scope="col">main_data_id</th>
       <th scope="col">reason</th>
     </tr>
   </thead>
@@ -14,7 +15,7 @@
     <tr>
         <td>{{$record->id}}</td>
         <td>{{$record->description}}</td>
-        <td>{{$record->table_1_id}}</td>
+        <td>{{$record->main_data_id}}</td>
         <td>{{$record->reason}}</td>
     </tr>
     @endforeach
