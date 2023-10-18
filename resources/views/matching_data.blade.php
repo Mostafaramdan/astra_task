@@ -17,9 +17,9 @@
             <form action="{{ route('matching_data_match') }}">
             <label for="column" class="form-label">choose column which you want to match:</label>
                 <select class="form-select" id="column" name="column" required>
-                    <option value="X">X</option>
-                    <option value="Y">Y</option>
-                    <option value="Z">Z</option>
+                    <option value="x">X</option>
+                    <option value="y">Y</option>
+                    <option value="z">Z</option>
                 </select>
                 <button type="submit" class="btn btn-primary">Match</button>
             </form>

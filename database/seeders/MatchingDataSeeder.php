@@ -38,10 +38,10 @@ class MatchingDataSeeder extends Seeder
              'factor',
         ];
         foreach($data as $d)
-        MatchingData::create([
-            'x'=> $data[rand(0,count($data)-1)] . $data[rand(0,count($data)-1)],
-            'y'=> $data[rand(0,count($data)-1)] . $data[rand(0,count($data)-1)],
-            'z'=> $data[rand(0,count($data)-1)] . $data[rand(0,count($data)-1)]
-        ]);
+            MatchingData::create([
+                'x'=> $data[rand(0,count($data)-1)] .",". $data[rand(0,count($data)-1)] ." $d",
+                'y'=> $data[rand(0,count($data)-1)] .",". $data[rand(0,count($data)-1)]." $d",
+                'z'=> $data[rand(0,count($data)-1)] .",". $data[rand(0,count($data)-1)]." $d"
+            ]);
     }
 }
