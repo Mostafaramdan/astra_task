@@ -1,7 +1,9 @@
 @extends('welcome')
 @section('content')
-<a href="{{ route('mapping_data.create') }}" class="btn btn-success btn-block">import Data</a>
-<table class="table">
+<a href="{{ route('import_data.store') }}?column={{$data->column}}" class="btn btn-success btn-block">
+    import Data manually: You have {{ collect($data->data)->where('percentage',100)->count()  }} records matched
+</a>
+<table class="table table-bordered table-striped" >
   <thead>
     <tr>
       <th scope="col">Table 3 ID</th>
@@ -20,7 +22,11 @@
         <td>{{$record['mapping_table_id']}}</td>
         <td>{{$record['mapping_table_reason']}}</td>
         <td>{{$record['main_table_id']}}</td>
-        <td>{{$record['percentage']}}%</td>
+        <td>{{$record['percentage']}}%
+            @if($record['percentage'] == 100) <button class="btn btn-success">Matched</button>
+            @else <button class="btn btn-warning">semi Matched</button>
+            @endif
+        </td>
     </tr>
     @endforeach
   </tbody>

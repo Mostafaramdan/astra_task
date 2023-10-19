@@ -27,7 +27,6 @@ class MatchDataActions
                 ->chunk(50,function ($records) use ($match_record,$keywords){
                     foreach($records as $mapping_record)
                     {
-
                         // result table
                         $this->data[]=[
                             'matching_table_id'=> $match_record->id,
@@ -108,4 +107,17 @@ class MatchDataActions
         return round($percentage, 2);
     }
 
+    function checkMAtchingTable3()
+    {
+        $records = MatchingData::all();
+        foreach($records as $record)
+        {
+            $check = 0;
+            $check = $record->x == $record->y?++$check:$check;
+            $check = $record->y == $record->z ? ++$check : $check;
+            $check = $record->x == $record->z ? ++$check : $check;
+            $record->matching_result = $check;
+        }
+        return $records;
+    }
 }
