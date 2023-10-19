@@ -110,7 +110,7 @@ class MatchDataActions
     function checkMAtchingTable3(string $column)
     {
         $cols=['x','y','z'];
-        unset($cols[array_search($column, $cols)]);
+        unset($cols[array_search($column, $cols)]); // unset column to make comparison with others two columns only
         $records = MatchingData::all();
         foreach($records as $record)
         {
