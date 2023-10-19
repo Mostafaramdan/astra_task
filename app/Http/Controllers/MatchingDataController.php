@@ -24,6 +24,6 @@ class MatchingDataController extends Controller
     function import_data_store(Request $request)
     {
         insertDataMappedJob::dispatch($request->column);
-        return view('match_data_result_in_table_3',['records'=>MatchDataFacade::checkMAtchingTable3()]);
+        return view('match_data_result_in_table_3',['records'=>MatchDataFacade::checkMAtchingTable3($request->column)]);
     }
 }

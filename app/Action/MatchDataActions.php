@@ -107,15 +107,19 @@ class MatchDataActions
         return round($percentage, 2);
     }
 
-    function checkMAtchingTable3()
+    function checkMAtchingTable3(string $column)
     {
+        $cols=['x','y','z'];
+        unset($cols[array_search($column, $cols)]);
         $records = MatchingData::all();
         foreach($records as $record)
         {
             $check = 0;
-            $check = $record->x == $record->y?++$check:$check;
-            $check = $record->y == $record->z ? ++$check : $check;
-            $check = $record->x == $record->z ? ++$check : $check;
+            foreach($cols as $col){
+                if(strpos(strtoupper($record->{$column}), strtoupper($record->{$col})) !== false) {
+                    $check++;
+                }
+            }
             $record->matching_result = $check;
         }
         return $records;

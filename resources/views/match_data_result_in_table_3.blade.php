@@ -21,8 +21,8 @@
         <td>{{$record->y}}</td>
         <td>{{$record->z}}</td>
         <td>
-            @if($record->matching_result == 3) <button class="btn btn-success">Full match (3 out of 3)</button>
-            @elseif($record->matching_result == 2) <button class="btn btn-warning">2 out of 3 matching</button>
+            @if($record->matching_result == 2) <button class="btn btn-success">Full match (3 out of 3)</button>
+            @elseif($record->matching_result == 1) <button class="btn btn-warning">2 out of 3 matching</button>
             @else <button class="btn btn-danger">No matching at all</button>
             @endif
         </td>
